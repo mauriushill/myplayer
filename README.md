@@ -1,5 +1,7 @@
-# ruby-cli-template
+# My Player CLI 
 
-Use this repository as a template for your Ruby CLI (command line interface) project.
+A command line interface app to create your own basketball player and team.
 
 - Ruby version: `3.2.1`
+## Usage
+Run `ruby app.rb` in the terminal.

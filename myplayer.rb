@@ -12,7 +12,7 @@ class MyPlayer
     puts "Welcome to the Basketball My Player experience!"
     puts "What is your players name?"
     self.player_name = gets.chomp.capitalize
-    puts "Welcome #{@player_name}"
+    puts "Welcome #{@player_name}!"
    your_position
 end
 
@@ -28,11 +28,28 @@ end
     case option 
     when 1
       self.position = "Point Guard"
-      puts ""
-    end
+    when 2
+      self.position = "Shooting Guard"
+    when 3
+      self.position = "Small Forward"
+    when 4 
+      self.position = "Power Forward"
+    when 5 
+      self.position = "Center"
+    else
+      puts "That's an invalid position. Try again." 
   end
+  your_team
+end
+
+def your_team
+  puts "#{@player_name}, what would you like your team name to be?"
+  self.team_name = gets.chomp.capitalize
+  puts "Welcome to the #{@team_name}!"
+  puts to_s
+end
 
   def to_s
-  puts "#{@player_name} is a #{@position}"
+  puts "#{@player_name} is the starting #{@position} for the #{@team_name}. Let the journey begin!"
   end
 end
