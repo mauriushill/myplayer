@@ -1,6 +1,6 @@
 class MyPlayer
   attr_accessor :position, :team_name, :player_name
-  def initialize
+  def initialize(position = nil, team_name = nil, player_name = nil)
     @position = position
     @team_name = team_name
     @player_name = player_name
@@ -13,7 +13,8 @@ class MyPlayer
     puts "What is your players name?"
     self.player_name = gets.chomp.capitalize
     puts "Welcome #{@player_name}!"
-   your_position
+    your_position
+    puts self.position
 end
 
   def your_position
@@ -25,22 +26,28 @@ end
     puts "5. Center"
     print "Choose an option: "
     option = gets.chomp.to_i
+    self.position = determine_position(option)
+    if self.position.nil?
+      puts "not a valid position"
+    end
+  end
+  def determine_position(option)
     case option 
     when 1
-      self.position = "Point Guard"
+      return "Point Guard"
     when 2
-      self.position = "Shooting Guard"
+     return "Shooting Guard"
     when 3
-      self.position = "Small Forward"
+     return "Small Forward"
     when 4 
-      self.position = "Power Forward"
+     return "Power Forward"
     when 5 
-      self.position = "Center"
+     return "Center"
     else
-      puts "That's an invalid position. Try again." 
-  end
-  your_team
-end
+      return nil
+    end
+  end 
+
 
 def your_team
   puts "#{@player_name}, what would you like your team name to be?"
