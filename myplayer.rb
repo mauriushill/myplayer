@@ -45,9 +45,11 @@ end
      return "Center"
     else
       return nil
+     
     end
+    your_team
   end 
-
+ 
 
 def your_team
   puts "#{@player_name}, what would you like your team name to be?"
